@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;500&display=swap');
+.group--input--label--flotting {
+    display: block;
+    border: 0;
+    border: 1px solid rgba(38, 50, 56, 0.16);
+    width: 100%;
+    border-radius: 8px;
+    &:focus {
+        outline: unset;
+    }
+    &>input {
+        height: 36px;
+        width: 100%;
+        border: unset;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        display: flex;
+        align-items: center;
+        letter-spacing: 0.01em;
+        &:focus {
+            outline: unset;
+        }
+    }
+    &>.label {
+        display: table;
+        font-family: 'Inter';
+        min-width: 0px;
+        max-width: 100%;
+        position: relative;
+        font-size: 12px;
+    }
+}

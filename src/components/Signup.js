@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import {Auth} from 'aws-amplify'
+import InputFlotting from './InputFlotting';
 
 const Signup = (props) => {
     const [state, setstate] = useState({
@@ -46,11 +47,14 @@ const Signup = (props) => {
     const returnFromConfirmationCode = () => {
         return(
             <>
-                <div>
-                    <label htmlFor="">Confirmation Code</label>
-                    <input type="text" name="confirmationCode" id="" onChange={HandleChange} value={confirmationCode} />
+                
+                <div className="row--login align-center my-1 mt-3 px-1">
+                    <InputFlotting descLabel="Código de confirmación" name="confirmationCode" type="text" id="confirmationCode" onChange={HandleChange} value={confirmationCode}/>
                 </div>
-                <button type="button" onClick={()=>HandleSubmitConfirmationCode()}>Confirmate</button>
+                <div className="row--login align-center mt-1">
+                    <button className="btn--login" type="button" onClick={()=>HandleSubmitConfirmationCode()}>CONFIRMAR CÓDGIO</button>
+                </div>
+                
             </>
         )
     }
@@ -58,22 +62,21 @@ const Signup = (props) => {
     const returnSignin = () => {
         return(
             <>
-                <div>
-                    <label htmlFor="">Email</label><br/>
-                    <input type="email" name="email" id="" onChange={HandleChange} value={email} />
+                <div className="row--login align-center my-1 mt-3 px-1">
+                    <InputFlotting descLabel="Correo electrónico" name="email" type="email" id="email" placeholder="Ejemplo. john@gmail.com" onChange={HandleChange}/>
                 </div>
-                <div>
-                    <label htmlFor="">Password</label><br/>
-                    <input type="password" name="password" id="" onChange={HandleChange} value={password} />
+                <div className="row--login align-center mt-1 px-1">
+                    <InputFlotting descLabel="Contraseña" type="password" name="password" id="password" placeholder="Al menos 8 caracteres" onChange={HandleChange}/>
                 </div>
-                <br/>
-                <button type="button" onClick={()=>HandleSubmitSignUp()}>SignUp</button>
+                <div className="row--login align-center mt-1">
+                    <button className="btn--login" type="button" onClick={()=>HandleSubmitSignUp()}>REGISTRARME</button>
+                </div>
             </>
         )
     }
 
     return(
-        <div>{state.newUser === null ? returnSignin() : returnFromConfirmationCode()}</div>
+        <>{state.newUser === null ? returnSignin() : returnFromConfirmationCode()}</>
     )
 }
 

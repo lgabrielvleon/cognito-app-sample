@@ -1,0 +1,71 @@
+.actions--auth {
+    font-family: var(--primary-font);
+    font-style: normal;
+    font-weight: bold;
+    font-size: 21px;
+    line-height: 25px;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.333333px;
+    color: var(--primary-color);
+    border-bottom: 2px solid transparent;
+    text-decoration: none;
+    transition: .3s all ease-in;
+}
+
+.actions--auth.active {
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.olvido-clave {
+    font-family: 'Red Hat Display';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    text-align: right;
+    letter-spacing: -0.333333px;
+    color: rgba(75, 81, 94, 0.67);
+    text-decoration: none;
+}
+
+.btn--login {
+    width: 230px;
+    height: 40px;
+    background-color: var(--primary-color);
+    border: unset;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+p.social-media {
+    font-family: 'Red Hat Display';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 13px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.333333px;
+    color: rgba(75, 81, 94, 0.67);
+}
+
+.login__terminos--politicas {
+    font-family: 'Red Hat Display';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 13px;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.333333px;
+    color: rgba(75, 81, 94, 0.67);
+    &>span {
+        color: var(--primary-color);
+        font-weight: 500;
+    }
+}

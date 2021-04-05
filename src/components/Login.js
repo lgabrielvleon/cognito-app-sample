@@ -1,8 +1,13 @@
 import { useState } from "react"
 import {Auth} from 'aws-amplify'
 
-const Login = (props) => {
+// Artefactory
+import './Login.scss'
+import './Auth.scss'
+import InputFlotting from "./InputFlotting"
 
+
+const Login = (props) => {
     const [user, setUser] = useState({
       username: '',
       password: ''
@@ -27,17 +32,20 @@ const Login = (props) => {
     } 
   return(
       <>
-          <div>
-              <div>
-                  <label htmlFor="">Email</label><br/>
-                  <input type="email" name="username" id="" onChange={HandleChange} value={username} />
-              </div>
-              <div>
-                  <label htmlFor="">Password</label><br/>
-                  <input type="password" name="password" id="" onChange={HandleChange} value={password} />
-              </div>
-              <button type="button" onClick={() => HandleSubmit()}>Loging</button>
-          </div>
+        <div className="row--login align-center my-1 mt-3 px-1">
+          <InputFlotting descLabel="Correo electrónico" name="username" type="email" id="email" placeholder="Ejemplo. john@gmail.com" onChange={HandleChange}/>
+        </div>
+        <div className="row--login align-center mt-1 px-1">
+          <InputFlotting descLabel="Contraseña" type="password" name="password" id="password" placeholder="Al menos 8 caracteres" onChange={HandleChange}/>
+        </div>
+
+        <div className="row--login align-rigth">
+          <a href="#!" className="olvido-clave my-1">¿Has olvidado tu contraseña?</a>
+        </div>
+
+        <div className="row--login align-center">
+          <button className="btn--login" type="button" onClick={() => HandleSubmit()}>INICIAR SESIÓN</button>
+        </div>
       </>
     )
 }
